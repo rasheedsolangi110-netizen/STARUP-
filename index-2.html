@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ur-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>STARUP | Catalog</title>
+<meta name="description" content="Bedsheets, earbuds aur women's shoes. Poore Pakistan mein cash on delivery. WhatsApp par order karein.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F4F7; --surface:#FFFFFF; --ink:#101828; --muted:#5B6577; --line:#DDE2EA;
+  --brand:#0B3D91; --brand-ink:#FFFFFF; --wa:#118C4F; --wa-ink:#FFFFFF; --price:#B54708; --chip:#E6ECF7;
+  --radius:14px;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#0E1420; --surface:#161E2E; --ink:#EEF1F7; --muted:#9AA6BC; --line:#28334A;
+    --brand:#7FA6F5; --brand-ink:#0E1420; --wa:#2BB673; --wa-ink:#06210F; --price:#F5B25C; --chip:#22304A; }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Figtree,system-ui,sans-serif;font-size:16px;line-height:1.5}
+h1,h2,h3{font-family:'Bricolage Grotesque',Figtree,sans-serif;line-height:1.15;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+
+header.top{background:var(--brand);color:var(--brand-ink);padding:28px 0 22px}
+header.top h1{font-size:clamp(28px,6vw,44px);font-weight:800}
+header.top p{margin:8px 0 0;max-width:46ch;opacity:.92}
+.trust{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:16px;font-size:14px;font-weight:600}
+.trust span{display:inline-flex;align-items:center;gap:6px}
+
+.filters{display:flex;gap:8px;overflow-x:auto;padding:14px 0;scrollbar-width:none}
+.filters::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 16px;font:inherit;font-weight:600;font-size:14px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+
+.grid{display:grid;grid-template-columns:1fr;gap:16px;padding-bottom:110px}
+@media(min-width:640px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.grid{grid-template-columns:repeat(3,1fr)}}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+.stage{position:relative;aspect-ratio:1/1;background:var(--chip)}
+.stage img{width:100%;height:100%;object-fit:cover;display:block}
+.stage .noimg{position:absolute;inset:0;display:none;align-items:center;justify-content:center;color:var(--muted);font-weight:600}
+.badge{position:absolute;top:10px;left:10px;background:var(--surface);color:var(--ink);border-radius:999px;padding:4px 10px;font-size:13px;font-weight:600;border:1px solid var(--line)}
+.thumbs{display:flex;gap:6px;padding:8px 12px 0;overflow-x:auto;scrollbar-width:none}
+.thumbs button{flex:none;width:52px;height:52px;border:2px solid transparent;border-radius:8px;padding:0;background:var(--chip);cursor:pointer;overflow:hidden}
+.thumbs button[aria-current="true"]{border-color:var(--brand)}
+.thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+.body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:10px;flex:1}
+.body h2{font-size:19px;font-weight:600}
+.price{font-family:'Bricolage Grotesque',sans-serif;font-size:24px;font-weight:800;color:var(--price)}
+.price small{font-family:Figtree,sans-serif;font-size:13px;font-weight:500;color:var(--muted);margin-left:6px}
+.summary{margin:0;color:var(--muted);font-size:15px}
+.hl{margin:0;padding-left:18px;font-size:15px}
+.sizes{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.sizes legend{font-weight:600;font-size:14px;padding:0;margin-bottom:6px}
+fieldset{border:0;margin:0;padding:0}
+.sizes label{position:relative}
+.sizes input{position:absolute;opacity:0;inset:0}
+.sizes span{display:inline-flex;min-width:44px;height:44px;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:10px;font-weight:600;cursor:pointer;background:var(--surface)}
+.sizes input:checked + span{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.sizes input:focus-visible + span{outline:3px solid var(--brand);outline-offset:2px}
+details{font-size:14px;border-top:1px solid var(--line);padding-top:8px}
+summary{cursor:pointer;font-weight:600}
+dl{margin:8px 0 0;display:grid;grid-template-columns:auto 1fr;gap:4px 12px}
+dt{color:var(--muted)} dd{margin:0}
+.order{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;border-radius:12px;background:var(--wa);color:var(--wa-ink);font-weight:700;text-decoration:none;font-size:16px}
+.order:hover{filter:brightness(1.06)}
+.empty{display:none;padding:40px 0;text-align:center;color:var(--muted)}
+
+.float{position:fixed;right:16px;bottom:16px;z-index:5;background:var(--wa);color:var(--wa-ink);text-decoration:none;font-weight:700;border-radius:999px;padding:14px 20px;box-shadow:0 6px 18px rgba(0,0,0,.25);display:inline-flex;gap:8px;align-items:center}
+footer{border-top:1px solid var(--line);padding:22px 0 90px;color:var(--muted);font-size:14px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <h1 id="storeName"></h1>
+    <p>Pasand karein, WhatsApp par order bhejein. Poore Pakistan mein cash on delivery.</p>
+    <div class="trust"><span>Cash on delivery</span><span>Poore Pakistan mein delivery</span><span>WhatsApp par seedha order</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="filters" id="filters" role="group" aria-label="Category filter"></div>
+  <div class="grid" id="grid"></div>
+  <p class="empty" id="empty">Is category mein abhi koi product nahi.</p>
+</main>
+
+<footer><div class="wrap"><span id="footName"></span>. Rang aur naap mein 1-3 cm ka farq ho sakta hai; screen ki roshni se rang thora mukhtalif nazar aa sakta hai.</div></footer>
+
+<a class="float" id="floatWa" href="#" target="_blank" rel="noopener">WhatsApp par baat karein</a>
+
+<script>
+/* ====== APNI DETAILS YAHAN BADLEIN ====== */
+const STORE_NAME = "STARUP";          // apni dukaan ka naam
+const WHATSAPP_NUMBER = "923447364810";    // country code ke saath, bina + ya 0 ke. Misal: 923001234567
+/* ======================================== */
+
+const PRODUCTS = [{"sku": "MKZ-746935-746935001", "name": "3 Pcs Cotton Printed Double Bedsheet", "price": 2000, "sizes": [], "category": "Bedding", "sub": "Double Bed Sheets", "summary": "", "highlights": [], "specs": [["Fabric", "Cotton"], ["Pattern", "Printed"], ["Bed Size", "Double Bed"], ["Number Of Pieces", "3 Pcs"], ["Package Includes", "1 x Bedsheet, 2 x Pillow Covers"], ["Bedsheet Length", "94 Inches"], ["Bedsheet Width", "89 Inches"], ["Pillow Length", "29 Inches"], ["Pillow Width", "19 Inches"], ["Color", "Blue"]], "images": ["https://www.markaz.app/api/export/image/595-60-746935-product-1.webp?src=https%3A%2F%2Fstatic.markaz.app%2Fpakistan%2Fproducts%2F595-60-746935-product-1.webp"], "inStock": true}, {"sku": "MKZ-746922-746922001", "name": "3 Pcs Cotton Printed Double Bedsheet", "price": 2000, "sizes": [], "category": "Bedding", "sub": "Double Bed Sheets", "summary": "", "highlights": [], "specs": [["Fabric", "Cotton"], ["Pattern", "Printed"], ["Bed Size", "Double Bed"], ["Number Of Pieces", "3 Pcs"], ["Package Includes", "1 x Bedsheet, 2 x Pillow Covers"], ["Bedsheet Length", "94 Inches"], ["Bedsheet Width", "89 Inches"], ["Pillow Length", "29 Inches"], ["Pillow Width", "19 Inches"], ["Color", "Blue"]], "images": ["https://www.markaz.app/api/export/image/595-60-746922-product-1.webp?src=https%3A%2F%2Fstatic.markaz.app%2Fpakistan%2Fproducts%2F595-60-746922-product-1.webp"], "inStock": true}, {"sku": "MKZ-692083-692083001", "name": "ANC/ENC Noise-Cancelling Earbuds A9 Pro White", "price": 3000, "sizes": [], "category": "Electronic Accessories", "sub": "Headphones & Headsets", "summary": "Perfect for busy Pakistani professionals and students, these Airpods A9 Pro deliver crystal-clear sound and long-lasting battery life without breaking the bank. Designed with durable ABS plastic, they’re built to withstand daily use and local weather conditions, making them ideal for commuting, studying, or casual outings. The sleek white design adds a stylish touch to any outfit, while the touch control interface lets you manage music and calls effortlessly.", "highlights": ["Long-lasting battery with fast charge", "Durable ABS plastic construction", "Stylish white design for everyday use", "Advanced ANC/ENC noise reduction", "Touch control for easy operation", "Perfect for daily essentials and on-the-go use"], "specs": [["Material", "ABS Plastic"], ["Product Feature", "Long-Lasting Battery With Fast Charge"], ["Color", "White"], ["Package Includes", "1 x Airpods"]], "images": ["https://www.markaz.app/api/export/image/2060-86-692083-product-1.webp?src=https%3A%2F%2Fstatic.markaz.app%2Fpakistan%2Fproducts%2F2060-86-692083-product-1.webp", "https://www.markaz.app/api/export/image/2060-86-692083-product-2.webp?src=https%3A%2F%2Fstatic.markaz.app%2Fpakistan%2Fproducts%2F2060-86-692083-product-2.webp", "https://www.markaz.app/api/export/image/2060-86-692083-product-3.webp?src=https%3A%2F%2Fstatic.markaz.app%2Fpakistan%2Fproducts%2F2060-86-692083-product-3.webp", "https://www.markaz.app/api/export/image/2060-86-692083-product-4.webp?src=https%3A%2F%2Fstatic.markaz.app%2Fpakistan%2Fproducts%2F2060-86-692083-product-4.webp"], "inStock": true}, {"sku": "MKZ-627764", "name": "Women's Black Gemstone Strap Sandals Semi-Formal", "price": 1500, "sizes": ["6", "7", "8", "9", "10"], "category": "Shoes", "sub": "Women's Flats", "summary": "These stylish black satin flats are perfect for Pakistani women who want to look chic without compromising on comfort. Designed with a trendy floral gemstone embellishment and a decorative strap, they’re ideal for weddings, parties, or even daily wear. The durable satin material ensures long-lasting wear, while the breathable design keeps your feet cool during Pakistan’s warm weather. Whether you’re heading to a formal event or just running errands, these flats offer the perfect blend of elegance and practicality.", "highlights": ["Premium Quality Satin Material", "Stylish Gemstone Floral Design", "Durable Construction for Longevity", "Perfect for Weddings, Parties, and Daily Wear", "Available in Sizes 6 to 10"], "specs": [["Material", "Satin"], ["Pattern", "Gemstones"], ["Gender", "Women's"], ["Product Feature", "Semi-Formal"], ["Available Sizes", "6, 7, 8, 9, 10"], ["Size Chart", "Size Chart Attached"], ["Package Includes", "01 x Flats"], ["Color", "Black"]], "images": ["https://www.markaz.app/api/export/image/992-139-627764-product-1.png?src=https%3A%2F%2Fstatic.markaz.app%2Fpakistan%2Fproducts%2F992-139-627764-product-1.png", "https://www.markaz.app/api/export/image/992-139-627764-product-2.png?src=https%3A%2F%2Fstatic.markaz.app%2Fpakistan%2Fproducts%2F992-139-627764-product-2.png", "https://www.markaz.app/api/export/image/992-139-627764-product-3.png?src=https%3A%2F%2Fstatic.markaz.app%2Fpakistan%2Fproducts%2F992-139-627764-product-3.png", "https://www.markaz.app/api/export/image/992-139-627764-product-4.png?src=https%3A%2F%2Fstatic.markaz.app%2Fpakistan%2Fproducts%2F992-139-627764-product-4.png", "https://www.markaz.app/api/export/image/992-139-627764-product-5.png?src=https%3A%2F%2Fstatic.markaz.app%2Fpakistan%2Fproducts%2F992-139-627764-product-5.png", "https://www.markaz.app/api/export/image/992-139-627764-product-6.jpg?src=https%3A%2F%2Fstatic.markaz.app%2Fpakistan%2Fproducts%2F992-139-627764-product-6.jpg", "https://www.markaz.app/api/export/image/992-139-627764-product-1-withcode.png?src=https%3A%2F%2Fstatic.markaz.app%2Fpakistan%2Fproducts%2F992-139-627764-product-1-withcode.png"], "inStock": true}, {"sku": "MKZ-554493-554493004", "name": "Women's Black Flower Rhinestone PVC Slides Size 8", "price": 1200, "sizes": [], "category": "Shoes", "sub": "Women's Flats", "summary": "These Stylish Women's Casual PVC Flats are the perfect blend of comfort and elegance for any occasion in Pakistan. Designed with a sleek black finish and adorned with eye-catching black floral embellishments and sparkling rose-gold rhinestone accents, they add a touch of glamour to your everyday look. Ideal for weddings, parties, or casual outings, these flats are crafted to keep your feet comfortable while making a bold fashion statement. The durable PVC material ensures long-lasting wear, making them a smart investment for your wardrobe.", "highlights": ["Made from premium quality PVC for durability and comfort", "Stylish black design with floral and rhinestone details", "Lightweight and easy to wear for all-day comfort", "Available in sizes 6 to 11 to fit most feet", "Perfect for weddings, parties, and casual outings"], "specs": [["Material", "PVC"], ["Pattern", "Plain"], ["Gender", "Women's"], ["Product Feature", "Casual"], ["Available Sizes", "6, 7, 8, 9, 10, 11"], ["Size Chart", "Size Chart Attached"], ["Package Includes", "1 x Flats"]], "images": ["https://www.markaz.app/api/export/image/317-139-554493-product-1.jpg?src=https%3A%2F%2Fstatic.markaz.app%2Fpakistan%2Fproducts%2F317-139-554493-product-1.jpg", "https://www.markaz.app/api/export/image/317-139-554493-product-2.jpg?src=https%3A%2F%2Fstatic.markaz.app%2Fpakistan%2Fproducts%2F317-139-554493-product-2.jpg", "https://www.markaz.app/api/export/image/317-139-554493-product-3.jpg?src=https%3A%2F%2Fstatic.markaz.app%2Fpakistan%2Fproducts%2F317-139-554493-product-3.jpg", "https://www.markaz.app/api/export/image/317-139-554493-product-4.jpg?src=https%3A%2F%2Fstatic.markaz.app%2Fpakistan%2Fproducts%2F317-139-554493-product-4.jpg", "https://www.markaz.app/api/export/image/317-139-554493-product-322.jpeg?src=https%3A%2F%2Fstatic.markaz.app%2Fpakistan%2Fproducts%2F317-139-554493-product-322.jpeg"], "inStock": true, "fixedSize": "8"}];
+
+const fmt = n => "Rs " + n.toLocaleString("en-PK");
+const waNumberSet = /^\d{11,15}$/.test(WHATSAPP_NUMBER);
+const waLink = text => "https://wa.me/" + (waNumberSet ? WHATSAPP_NUMBER : "") + "?text=" + encodeURIComponent(text);
+
+document.getElementById("storeName").textContent = STORE_NAME;
+document.getElementById("footName").textContent = STORE_NAME;
+document.title = STORE_NAME + " | Catalog";
+document.getElementById("floatWa").href = waLink("Assalam o Alaikum! Mujhe aapke products ke baare mein poochna hai.");
+
+const grid = document.getElementById("grid");
+const filtersEl = document.getElementById("filters");
+
+function el(tag, attrs = {}, ...kids){
+  const e = document.createElement(tag);
+  for (const [k,v] of Object.entries(attrs)){
+    if (k === "class") e.className = v;
+    else if (k === "text") e.textContent = v;
+    else e.setAttribute(k, v);
+  }
+  kids.flat().forEach(c => c != null && e.append(c));
+  return e;
+}
+
+function card(p, idx){
+  const c = el("article", {class:"card", "data-cat":p.category});
+  const main = el("img", {alt:p.name, loading: idx < 2 ? "eager" : "lazy", referrerpolicy:"no-referrer"});
+  const noimg = el("div", {class:"noimg", text:"Tasveer load nahi hui"});
+  const stage = el("div", {class:"stage"}, main, noimg, el("span",{class:"badge",text:p.sub}));
+  function show(i){
+    main.style.display = "block"; noimg.style.display = "none";
+    main.src = p.images[i];
+    thumbBtns.forEach((b,j)=> b.setAttribute("aria-current", j===i ? "true":"false"));
+  }
+  main.addEventListener("error", () => { main.style.display="none"; noimg.style.display="flex"; });
+  const thumbBtns = p.images.length > 1 ? p.images.map((u,i)=>{
+    const t = el("img",{src:u,alt:"",loading:"lazy",referrerpolicy:"no-referrer"});
+    t.addEventListener("error",()=>{ t.parentElement.style.display="none"; });
+    const b = el("button",{type:"button","aria-label":"Tasveer " + (i+1)}, t);
+    b.addEventListener("click",()=>show(i));
+    return b;
+  }) : [];
+  c.append(stage);
+  if (thumbBtns.length) c.append(el("div",{class:"thumbs"}, thumbBtns));
+
+  const body = el("div",{class:"body"});
+  body.append(el("h2",{text:p.name}));
+  body.append(el("div",{class:"price"}, fmt(p.price), el("small",{text:"cash on delivery"})));
+  if (p.summary) body.append(el("p",{class:"summary",text:p.summary.split(". ").slice(0,2).join(". ").replace(/\.?$/,".")}));
+  if (p.highlights.length) body.append(el("ul",{class:"hl"}, p.highlights.slice(0,4).map(h=>el("li",{text:h}))));
+
+  let sizeName = "size-" + idx;
+  if (p.sizes.length){
+    const fs = el("fieldset",{class:"sizes"}, el("legend",{text:"Size chunein"}));
+    p.sizes.forEach((s,i)=>{
+      const inp = el("input",{type:"radio",name:sizeName,value:s}); if(i===0) inp.checked = true;
+      fs.append(el("label",{}, inp, el("span",{text:s})));
+    });
+    body.append(fs);
+  } else if (p.fixedSize){
+    body.append(el("p",{class:"summary",text:"Size: " + p.fixedSize}));
+  }
+
+  if (p.specs.length){
+    const d = el("details",{}, el("summary",{text:"Poori tafseel"}),
+      el("dl",{}, p.specs.map(([k,v])=>[el("dt",{text:k}), el("dd",{text:v})]).flat()));
+    body.append(d);
+  }
+
+  const order = el("a",{class:"order",href:"#",target:"_blank",rel:"noopener",text:"WhatsApp par order karein"});
+  function updateLink(){
+    let size = p.fixedSize || "";
+    if (p.sizes.length){ const chk = c.querySelector('input[name="'+sizeName+'"]:checked'); size = chk ? chk.value : ""; }
+    const lines = ["Assalam o Alaikum! Mujhe yeh order karna hai:", "", "Product: " + p.name];
+    if (size) lines.push("Size: " + size);
+    lines.push("Qty: 1", "Qeemat: " + fmt(p.price), "", "Naam:", "Shehar aur pura pata:", "Phone number:");
+    order.href = waLink(lines.join("\n"));
+  }
+  body.append(order);
+  c.append(body);
+  c.addEventListener("change", updateLink);
+  updateLink();
+  if (p.images.length) show(0); else { main.style.display="none"; noimg.style.display="flex"; }
+  return c;
+}
+
+PRODUCTS.forEach((p,i)=>grid.append(card(p,i)));
+
+const cats = ["Sab", ...new Set(PRODUCTS.map(p=>p.category))];
+cats.forEach((cat,i)=>{
+  const b = el("button",{type:"button",class:"chip","aria-pressed": i===0 ? "true":"false",text:cat});
+  b.addEventListener("click",()=>{
+    filtersEl.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed","false"));
+    b.setAttribute("aria-pressed","true");
+    let shown = 0;
+    grid.querySelectorAll(".card").forEach(cd=>{
+      const on = cat==="Sab" || cd.dataset.cat===cat;
+      cd.style.display = on ? "" : "none"; if(on) shown++;
+    });
+    document.getElementById("empty").style.display = shown ? "none" : "block";
+  });
+  filtersEl.append(b);
+});
+</script>
+</body>
+</html>
